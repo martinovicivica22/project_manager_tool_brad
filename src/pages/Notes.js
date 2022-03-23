@@ -1,9 +1,10 @@
 import React from "react";
+import DragNDrop from "../components/DragNDrop/DragNDrop";
 
 function Notes() {
   return (
     <div className="notes">
-      <h1>Notes</h1>
+      <DragNDrop />
     </div>
   );
 }

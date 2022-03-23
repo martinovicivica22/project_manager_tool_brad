@@ -1,44 +1,23 @@
-.rigschedule {
+/* .rigschedule {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 90%;
-  min-height: 600px;
+  min-height: 90%;
   background: #060b26;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
   padding-bottom: 32px;
-}
+  color: aliceblue;
+} */
 
-.rigschedulemain {
+.form-card {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.rigschedulemain .column {
-  width: 30%;
-}
-
-.droppable-col {
-  width: 100%;
-  background-color: gray;
-  padding: 10px 10px 0 10px;
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  margin-bottom: 10px;
-  background-color: gray;
-  color: white;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 7px;
-}
-
-.item.dragging {
-  background-color: coral;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 600px;
+  margin: 128px;
+  border-radius: 10px;
+  padding-bottom: 32px;
 }

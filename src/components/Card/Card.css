@@ -1,0 +1,23 @@
+.main {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: black;
+  width: 90%;
+  height: 90%;
+}
+
+.drag-n-drop {
+  padding: 0.5rem;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(auto-fill, 300px);
+}
+
+.dng-group {
+  background-color: #49505e;
+}
+
+.dng-item {
+  background-color: rgb(196, 105, 2);
+}
