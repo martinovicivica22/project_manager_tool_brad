@@ -21,3 +21,7 @@
   border-radius: 10px;
   padding-bottom: 32px;
 }
+
+.form-datatable {
+  min-width: 650px;
+}

@@ -4,7 +4,7 @@ const mockData = [
   {
     id: uuidv4(),
     Pad: "Whiskey Canyon 4 Pad",
-    wells: "Whiskey Canyon 14",
+    Wells: "Whiskey Canyon 14",
     Location: "Almond",
     Afe: "89150",
     DirectionalInclination: 29,
@@ -12,7 +12,7 @@ const mockData = [
   {
     id: uuidv4(),
     Pad: "Whiskey Canyon 4 Pad",
-    wells: "Whiskey Canyon 7",
+    Wells: "Whiskey Canyon 7",
     Location: "Almond",
     Afe: "89150",
     DirectionalInclination: 16,
@@ -20,7 +20,7 @@ const mockData = [
   {
     id: uuidv4(),
     Pad: "Whiskey Canyon 4 Pad",
-    wells: "Whiskey Canyon 16",
+    Wells: "Whiskey Canyon 16",
     Location: "Almond",
     Afe: "89150",
     DirectionalInclination: 12,
@@ -28,7 +28,7 @@ const mockData = [
   {
     id: uuidv4(),
     Pad: "Whiskey Canyon 4 Pad",
-    wells: "Whiskey Canyon 4",
+    Wells: "Whiskey Canyon 4",
     Location: "Almond",
     Afe: "89150",
     DirectionalInclination: 31,
