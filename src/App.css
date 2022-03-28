@@ -9,9 +9,7 @@
 
 .home,
 .rigschedule,
-.taskmanager,
-.notes,
-.projectmanager {
+.taskmanager {
   display: flex;
   height: 90vh;
   align-items: center;

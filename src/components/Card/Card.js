@@ -1,22 +1,52 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-// import { createTheme } from "@mui/material/styles";
-// import { ThemeProvider } from "@emotion/react";
+import * as FaIcons from "react-icons/fa";
+import { Box } from "@mui/system";
+import Chips from "../Chips/Chips";
+import { Typography } from "@mui/material";
 
-const CardBasic = ({ well }) => {
+const CardKB = () => {
   return (
-    <Card>
-      <div>
-        <CardContent>
-          <Typography component="h5" variant="h5">
-            {well.title}
-          </Typography>
-        </CardContent>
-      </div>
-    </Card>
+    <Box
+      className="card"
+      sx={{
+        padding: "10px",
+        borderRadius: "5px",
+        backgroundColor: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+      }}
+    >
+      <Box
+        className="card_top"
+        sx={{
+          display: "flex",
+          gap: "5px",
+        }}
+      >
+        <Box
+          className="card_top_labels"
+          sx={{ flexGrow: 1, display: "flex", gap: "10px" }}
+        >
+          <Chips />
+        </Box>
+        <FaIcons.FaEllipsisH
+          sx={{ opacity: 0, transition: "200ms", ":hover": { opacity: 1 } }}
+        />
+      </Box>
+      <Box className="card_title">Random name</Box>
+      <Box className="card_footer">
+        <Typography>
+          <FaIcons.FaClock />
+          28 March
+        </Typography>
+        <Typography>
+          <FaIcons.FaCheck />
+          1/4
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
-export default CardBasic;
+export default CardKB;

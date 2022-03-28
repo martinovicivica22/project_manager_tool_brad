@@ -1,10 +1,10 @@
 import React from "react";
-import DragNDrop from "../components/DragNDrop/DragNDrop";
+import Kanban from "../components/Kanban/Kanban";
 
 function Notes() {
   return (
     <div className="notes">
-      <DragNDrop />
+      <Kanban />
     </div>
   );
 }
