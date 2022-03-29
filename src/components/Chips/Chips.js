@@ -21,7 +21,7 @@ const Chips = (props) => {
         width: "fit-content",
         backgroundColor: "gray",
       }}
-      label="Frontend"
+      label="Almond"
       color="primary"
       onDelete={handleDelete}
       deleteIcon={<AiIcons.AiOutlineClose />}

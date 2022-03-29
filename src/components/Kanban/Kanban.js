@@ -5,25 +5,16 @@ import Board from "./Board";
 
 const Kanban = () => {
   return (
-    <Box
-      className="main_app"
-      width="100%"
-      sx={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <Box
-        className="app_outer"
-        sx={{ flexGrow: 1, width: "100%", overflowX: "auto", padding: "20px" }}
-      >
         <Box
           className="app_boards"
           sx={{
             minWidth: "fit-content",
             display: "flex",
+            flexDirection: 'column',
+            padding: '20px',
             gap: "30px",
+            height: '100%',
+            width: '100%'
           }}
         >
           <Board />
@@ -32,8 +23,6 @@ const Kanban = () => {
           <Board />
           <Board />
         </Box>
-      </Box>
-    </Box>
   );
 };
 
