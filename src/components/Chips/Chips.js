@@ -11,6 +11,7 @@ const Chips = (props) => {
   return (
     <Chip
       className="chip"
+      size='small'
       sx={{
         display: "flex",
         gap: "10px",
@@ -19,7 +20,7 @@ const Chips = (props) => {
         borderRadius: "40px",
         fontSize: "14px",
         width: "fit-content",
-        backgroundColor: "gray",
+        backgroundColor: "orange",
       }}
       label="Almond"
       color="primary"

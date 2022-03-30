@@ -9,45 +9,38 @@ const CardKB = () => {
   return (
     <Card
       className="card"
+      variant="outlined"
       sx={{
-        padding: "10px",
+        padding: "0px",
+        margin: '2px',
         borderRadius: "5px",
         backgroundColor: "#fff",
+        minWidth: 290,
         display: "flex",
-        
-        gap: "10px",
+        flexDirection: 'column',
+        justifyContent: 'space-between'
       }}
     >
       <CardContent>
-        <Box
-          className="card_top"
-          sx={{
-            display: "flex",
-            gap: "5px",
-            minWidth: '290px',
-            flexDirection: "column",
-          }}
-        >
+        <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Box
-            className="card_top_labels"
-            sx={{ flexGrow: 1, display: "flex", gap: "10px" }}
-          >
+            className="card_top_labels">
             <Chips />
           </Box>
           <Box sx={{ opacity: 0, transition: "200ms", ":hover": { opacity: 1 } }}>
-          <FaIcons.FaEllipsisH
-            
-          />
+            <FaIcons.FaEllipsisH/>
           </Box>
         </Box>
-        <Box className="card_title" sx={{fontWeight: 'bold' }}>Random name</Box>
-        <Box className="card_footer" sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <Typography >
-            <FaIcons.FaClock />
+        <Box className="card_title" sx={{paddingY: '20px',}}>
+          <Typography sx={{fontWeight: 'bold' }}>Whiskey Canyon 14</Typography>
+        </Box>
+        <Box className="card_footer" sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', alignContent: 'flex-end',}}>
+          <Typography sx={{ fontSize: '12px',}}>
+            <FaIcons.FaClock size='12px'/>
             28 March
           </Typography>
-          <Typography>
-            <FaIcons.FaCheck />
+          <Typography sx={{ fontSize: '12px'}}>
+            <FaIcons.FaCheck size='12px'/>
             1/4
           </Typography>
         </Box>

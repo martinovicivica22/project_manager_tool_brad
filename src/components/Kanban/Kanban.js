@@ -1,16 +1,18 @@
-import { Box } from "@mui/system";
+import { Container } from "@mui/material";
+
 
 import React from "react";
 import Board from "./Board";
 
 const Kanban = () => {
   return (
-        <Box
+        <Container
           className="app_boards"
           sx={{
-            minWidth: "fit-content",
+            minWidth: "100%",
             display: "flex",
-            flexDirection: 'column',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             padding: '20px',
             gap: "30px",
             height: '100%',
@@ -22,7 +24,8 @@ const Kanban = () => {
           <Board />
           <Board />
           <Board />
-        </Box>
+          <Board />
+        </Container>
   );
 };
 
