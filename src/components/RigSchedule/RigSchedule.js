@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, cloneElement } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./RigSchedule.css";
 // import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -19,9 +19,13 @@ import {
   TableRow,
 } from "@mui/material/";
 import { TextField } from "@mui/material/";
+import mockRigData from "../../mockRigData";
 import mockData from "../../MockData";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
+import CardPad from "./CardPad";
+import { forEach } from "lodash";
+import CardRig from "./CardRig";
 
 // the application below
 function RigSchedule() {
@@ -136,6 +140,42 @@ function RigSchedule() {
     setRigData(newRigData);
   };
 
+  const padArray = mockRigData.map(pad => pad.Pad)
+  const uniquePads = [...new Set(padArray)]
+  
+  const groupWellsByPad = (mockRigData) => Object.values(mockRigData.reduce((mockRigData, {Pad, Well_name}) => {
+    if (mockRigData[Pad]) mockRigData[Pad].Well_name.push(Well_name);
+    else mockRigData[Pad] = {Pad, Well_name: [Well_name]};
+    return mockRigData
+  }, []))
+  
+  const wellsByPad = groupWellsByPad(mockRigData);
+
+  // const padEmpty = [];
+  // for(var i=0;i<uniquePads.length;i++){
+  //   padEmpty.push(<Box component='div' sx={{display: 'flex', padding: '10px'}}><CardPad value={ uniquePads[i] }>
+  //     </CardPad></Box>)
+  // }
+  
+  
+//   function findObjectByLabel(obj, label) {
+//     for(var elements in obj){
+//         if (elements === label){
+//              console.log(obj[elements]);
+//         }
+//          if(typeof obj[elements] === 'object'){
+//          findObjectByLabel(obj[elements], 'Well_name');
+//         }
+       
+//     }
+// };
+
+  console.log(wellsByPad)
+  console.log(uniquePads)
+  console.log(wellsByPad[0].Well_name)
+  
+  // console.log(wellsByPad[0].Pad)
+
   return (
     <Container
       maxWidth="xl"
@@ -217,7 +257,7 @@ function RigSchedule() {
       </Card>
 
       {/* <form sx={{ minWidth: 650 }} onSubmit={handleEditformSubmit}> */}
-      <Card sx={{ minWidth: 1300, backgroundColor: "#919191" }}>
+      {/* <Card sx={{ minWidth: 1300, backgroundColor: "#919191" }}>
         <CardContent>
           <Box component="form" onSubmit={handleEditformSubmit}>
             <TableContainer component={Paper}>
@@ -259,33 +299,14 @@ function RigSchedule() {
             </TableContainer>
           </Box>
         </CardContent>
-      </Card>
+      </Card> */}
       {/* return Cards instead of Table */}
-      <Card sx={{ minWidth: 1300, backgroundColor: "white" }}>
-        <CardContent>
-          <Box>
-            {rigData.map((data) => (
-              <Grid container spacing={6}>
-                <Grid item xs={4}>
-                  <Typography>{data.Pad}</Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography>{data.Wells}</Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography>{data.Location}</Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography>{data.Afe}</Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography>{data.DirectionalInclination}</Typography>
-                </Grid>
-              </Grid>
-            ))}
-          </Box>
-        </CardContent>
-      </Card>
+      <Container>
+          {wellsByPad.map(item => <Box component='div' sx={{display: 'flex', padding: '10px'}}><CardPad value={item.Pad}></CardPad></Box>)}
+          {/* {padEmpty} */}
+          {/* {uniquePads.map(item => <Box component='div' sx={{display: 'flex', padding: '10px'}}><CardPad value={item}>
+            </CardPad></Box>)} */}
+      </Container>
       {/* </form> */}
     </Container>
   );

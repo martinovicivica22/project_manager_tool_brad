@@ -1,10 +1,11 @@
 import React from "react";
-import TMList from "../components/Taskmanager/TMList";
+import KanBanMain from "../components/Taskmanager/KanBanMain";
+
 
 function TaskManager() {
   return (
     <div className="taskmanager">
-      <TMList />
+      <KanBanMain />
     </div>
   );
 }

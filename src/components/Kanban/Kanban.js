@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 
 
 import React from "react";
+import Editable from "../Editable/Editable";
 import Board from "./Board";
 
 const Kanban = () => {
@@ -24,7 +25,7 @@ const Kanban = () => {
           <Board />
           <Board />
           <Board />
-          <Board />
+          <Editable />
         </Container>
   );
 };
